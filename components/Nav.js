@@ -1,10 +1,31 @@
+import Link from 'next/link';
+
 const Nav = ({ settings }) => (
   <header className='top-header util__flex util__container'>
-    <nav className='top-header__col'>Navigation</nav>
+    <nav className='top-header__col'>
+      <ul className='top-header__nav'>
+        {settings &&
+          settings.content.main_navi.map((navitem, index) => (
+            <li key={index}>
+              <Link href={navitem.link.cached_url}>
+                <a className='top-header__link'>{navitem.name}</a>
+              </Link>
+            </li>
+          ))}
+      </ul>
+    </nav>
     <a href='/' className='top-header__col top-header__logo'>
       <img src='//a.storyblok.com/f/42016/1096x313/0353bf6654/logo2.png' />
     </a>
-    <nav className='top-header__col top-header__second-navi'>Languagues</nav>
+    <nav className='top-header__col top-header__second-navi'>
+      <ul className='top-header__nav top-header__nav--right'>
+        <li>
+          <Link href='/en/blog'>
+            <a className='top-header__link'>English</a>
+          </Link>
+        </li>
+      </ul>
+    </nav>
     <style jsx>{`
       .top-header {
         justify-content: space-between;
