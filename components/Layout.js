@@ -22,7 +22,7 @@ export default ({ children, settings = {} }) => (
       body {
         font-family: 'Zilla Slab', Helvetica, sans-serif;
         line-height: 1;
-        font-size: 18px;
+        font-size: 1.125rem;
         color: #000;
         margin: 0;
         padding: 0;
