@@ -1,5 +1,6 @@
-import Head from '../components/head';
-import Nav from '../components/nav';
+import Head from './head';
+import Nav from './nav';
+import StoryblokService from '../utils/storyblok-service';
 
 export default ({ children, settings = {} }) => (
   <div>
@@ -59,5 +60,6 @@ export default ({ children, settings = {} }) => (
         height: 2px;
       }
     `}</style>
+    {StoryblokService.bridge()}
   </div>
 );
